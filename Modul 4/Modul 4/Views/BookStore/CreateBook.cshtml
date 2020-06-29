@@ -1,0 +1,20 @@
+﻿@model BusinessLayer.ModelsDTO.BookDTO
+@{
+    ViewBag.Title = "RedirectToBookCreation";
+}
+
+<h2>Create new book</h2>
+<div class="row">
+    <form method="post">
+        <label>Book Name</label>
+        <input type="text" name="Name" />
+        <button type="submit" value="Save">Submit</button>
+        @Html.DropDownListFor(model => model.Name,
+                          new List<SelectListItem> {
+                               new SelectListItem { Value = "0" , Text = "Horror" },
+                               new SelectListItem { Value = "1" , Text = "Fantasy" },
+                               new SelectListItem { Value = "2" , Text = "Adventure" }
+                            },
+                          new { @class = "myselect" })
+    </form>
+</div>
